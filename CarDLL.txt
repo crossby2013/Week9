@@ -1,0 +1,98 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ClassLibrary2
+{
+    public class Car
+    {
+        private int speed;
+        private bool lights;
+        private int doors;
+        private string color;
+
+        public int Speed
+        {
+            get
+            {
+                return this.speed;
+            }
+            set
+            {
+                this.speed = value;
+            }
+        }
+          public bool Lights
+          {
+            get
+            {
+               return this.lights;
+            }
+             set
+            {
+             this.lights = value;
+            }
+
+           }
+        public int Doors
+          {
+            get
+              {
+                  return this.doors;
+              }
+            set
+              {
+                  this.doors = value;
+              }
+          }
+        public string Color
+       {
+        get
+        {
+            return this.color;
+        }
+        set
+           {
+               this.color = value;
+           }
+        }
+        public Car()
+        {
+            this.Speed = 80;
+            this.Lights = false;
+            this.Doors = 4;
+            this.Color = "Midnight Blue";
+        }
+        public Car(int Speed, bool Lights, int Doors, string Color)
+        {
+            this.Speed = Speed;
+            this.Lights = Lights;
+            this.Doors = Doors;
+            this.Color = Color; 
+        }
+        public bool Stop(int Speed)
+        {
+           if (Speed >= 1)
+           {
+               this.Lights = true;
+           }
+           else
+           {
+               this.Lights = false;
+           }
+             Console.WriteLine("Are your lights on? : "  + this.Lights);
+              return true;
+             
+        }
+        public void Drive()
+        {
+            Console.WriteLine(" Our Car is " + this.Color + " and drives up to " + this.Speed + " mph ");
+        }
+        public static int Accelerate()
+        {
+            return 100;
+        }
+     }
+}
