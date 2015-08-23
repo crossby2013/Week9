@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using ClassLibrary2;
+
+namespace CarsDLLtoConsole
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Car myCar = new Car();
+            myCar.Drive();
+            Car mycar2 = new Car();
+            mycar2.Stop(0);
+            mycar2.Stop(45);
+            Car mycar3 = new Car();
+            //Speed up past the car's max speed to trigger the exception
+            try
+            {
+                for (int i = 0; i < 10; i++)
+                    mycar3.Accelerate(10);
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine("\n*** Error! *** ");
+                Console.WriteLine("Method : {0} ", e.TargetSite);
+                Console.WriteLine("Message : {0} ", e.Message);
+                Console.WriteLine("Source : {0} ", e.Source);
+                //Console.WriteLine("Help Link: {0} ", e.HelpLink);
+            
+            }
+            //Error has been handled
+            Console.WriteLine("\n***** Out of exception logic ***** ");
+            
+        }
+    }
+}

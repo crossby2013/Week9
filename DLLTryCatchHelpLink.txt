@@ -1,0 +1,133 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ClassLibrary2
+{
+    public class Car
+    {
+        private int speed;
+        private bool lights;
+        private int doors;
+        private string color;
+        private string model;
+        private bool carIsDead;
+        public const int MaxSpeed = 100;
+        public int Speed
+        {
+            get
+            {
+                return this.speed;
+            }
+            set
+            {
+                this.speed = value;
+            }
+        }
+          public bool Lights
+          {
+            get
+            {
+               return this.lights;
+            }
+             set
+            {
+             this.lights = value;
+            }
+
+           }
+        public int Doors
+          {
+            get
+              {
+                  return this.doors;
+              }
+            set
+              {
+                  this.doors = value;
+              }
+          }
+        public string Color
+       {
+        get
+        {
+            return this.color;
+        }
+        set
+           {
+               this.color = value;
+           }
+        }
+        public string Model
+        {
+            get
+            {
+                return this.model;
+            }
+            set
+            {
+                this.model = value;
+            }
+        }
+        public Car()
+        {
+            this.Speed = 25;
+            this.Lights = false;
+            this.Doors = 4;
+            this.Color = "Midnight Blue";
+            this.Model = "Jetta";
+        }
+        public Car(int Speed, bool Lights, int Doors, string Color, string Model)
+        {
+            this.Speed = Speed;
+            this.Lights = Lights;
+            this.Doors = Doors;
+            this.Color = Color;
+            this.Model = Model;
+        }
+        public bool Stop(int Speed)
+        {
+           if (Speed >= 1)
+           {
+               this.Lights = true;
+           }
+           else
+           {
+               this.Lights = false;
+           }
+             Console.WriteLine("Does your lights turn off at this speed? : "  + this.Lights);
+              return true;
+             
+        }
+        public void Drive()
+        {
+            Console.WriteLine(" Our Car is " + this.Color + " and drives up to " + this.Speed + " mph ");
+        }
+        public void Accelerate(int delta)
+            {
+            if (carIsDead)
+            Console.WriteLine("The {0} is out of order.... ", Model);
+            else
+            {
+                Speed += delta;
+                if (Speed >= MaxSpeed)
+                {
+                 Speed = 0;
+                 carIsDead = true;
+                 throw new Exception(string.Format("{0} has overheated! ", Model));
+                    //Call the HelpLink property
+                    //create a local variable before throwing the Exception object
+                   // Exception ex =
+                        //new Exception(string.Format("{0} has overheated! ", Model));
+                    //ex.HelpLink = "http://www.CarsRUs.com";
+                    //throw ex;
+                }
+                else
+                    Console.WriteLine(" => Speed = {0} ", Speed);
+            }
+   
+        }
+     }
+}
