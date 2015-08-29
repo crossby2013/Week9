@@ -1,0 +1,47 @@
+1.Exceptions - in .NET is an object, which signals an error or an event, which is not anticipated in the normal program flow.
+
+2.Exception Handling - is a mechanism, which allows exceptions tobe thrown and caught. It is provided interally by the CLR.
+
+3.Exceptions Hierarchy - There are two types of exceptions in .NET Framework: exceptions thrown by the applications we develop (ApplicationException) and exceptions thrown by the runtime (SystemException).
+
+4.Stack - keep track of what's going on in our application by stacking another box on top every time we call a method. Can only use what's in the top box on the Stack. When we're done with the top box (the method is done executing) we throw it away and proceed to use the stuff in the previous box on the top of the Stack.
+
+5.Stack Trace- gives detailed information of exactly where the error occurred.Priceless tool during debugging.
+
+6.Stack Push - put an object on the stack.
+
+7.Stack Pop / Pull- get the top item on the stack.
+
+8.Compile (a program) -  transforms source code written in a programming language into another computer language.
+
+9.Debug - is a methodical process of finding and reducing the number of bugs, or defects, in a computer program.
+
+10.Throw an Exception - or raised by programming code that must send a signal to the executing program about an error or an usual situation. 
+
+11.Catch an Exception - a method catches an exception using a combination of the try and catch keywords.A try/catch block is placed around the code that might generate an exception.
+
+12.Application Exception - only purpose is to identify the source of the error.When handling an exception deriving from System.ApplicationException, you can assume the exception was raised by the code base of the executing application, rather than by the .NET base class libraries or .NET runtime engine.
+
+13.IO Exception -  is the base class for exceptions thrown while accessing information using streams, files and directories.
+
+14.Nested Exceptions - is the first exception, if the new exception keep a reference to the first exception.
+
+15.Inner Exception - is the exception that caused the current exception. It is used in cases when you want to surface a different exception than the one that your code caught but you don't want to throw away the original context.
+
+16.Wrapped Exception - To wrap an exception, you specify it as the inner exception of a new exception and then throw the new exception. This practice should be used only in situations where the original exception is not meaningful to the person who receives the exception, or the call stack for the exception is misleading or uninteresting.
+
+17.Internal Exception - Defines exceptions that are thrown by a test item provider and that are wrapped in this exception.
+
+18.Dispose Pattern - The basic implementation of the pattern involves implementing the System.IDisposable interface and declaring the Dispose(bool) method that implements all resource cleanup logic to be shared between the Dispose method and the optional finalizer.
+
+19.Null - is the default value of reference-type variables.
+
+20.Try - A try block identifies a block of code for which particular exceptions is activated.
+
+21.Catch - A program catches an exception with an exception handler at the place in a program where you want to handle the problem.
+
+22.Finally- ensure that a set of code statements will alwats execute, exception or not.
+
+23.Error Message - a message displayed on a monitor screen or printout, indicating that an incorrect instruction has been given, or that there is an error resulting from faulty software or hardware.
+
+24.System Exception - exceptions that are thrown by the .NET platform. When an exception type derives from System.SystemException, you are able to determine that the .NET runtime is the entity that has thrown the exception, rather than the code base of the executing application.
